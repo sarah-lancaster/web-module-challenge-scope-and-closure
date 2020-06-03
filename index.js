@@ -27,11 +27,17 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * -counter1 has count declared w/in function scope
+ * -counter2 has count variable declared in global scope (outside function)
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ * -counter1 refers to a function within the function - this is closure
+ * 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *-counter1 has a closure so you can use outer function's variables at another time (private variable), and
+    also controls side effects - returns the function as the result
+ *-counter2 invokes/ runs function - returns value of function based on argument input
 */
 
 // counter1 code
@@ -43,6 +49,7 @@ function counterMaker() {
 }
 
 const counter1 = counterMaker();
+
 
 // counter2 code
 let count = 0;
