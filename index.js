@@ -51,6 +51,8 @@ function counterMaker() {
 const counter1 = counterMaker();
 
 
+
+
 // counter2 code
 let count = 0;
 
@@ -58,6 +60,8 @@ function counter2() {
   return count++;
 }
 
+// console.log(counter2());
+// console.log(counter2());
 
 /* Task 2: inning() 
 
@@ -71,11 +75,11 @@ function inning() {
   return score;
 }
 
-// console.log(inning());
-// console.log(inning());
-// console.log(inning());
-// console.log(inning());
-// console.log(inning());
+console.log(inning());
+console.log(inning());
+console.log(inning());
+console.log(inning());
+console.log(inning());
 // console.log(inning());
 // console.log(inning());
 // console.log(inning());
@@ -189,13 +193,15 @@ Final Score: 6 - 10 */
 function scoreboard(callback, innings) {
   let home = 0;
   let away = 0;
+  let numInning = 0;
   for (let i = 0; i < innings ; i++){
     home = callback() + home;
     away = callback() + away;
-    var numInning = numInning + 1;
-    console.log(`${numInning}: ${home} - ${away}`)
+    numInning = numInning + 1;
+    console.log(`${numInning} inning: ${home} - ${away}`)
   }
   console.log(`Final Score: ${home} - ${away}`);
 }
 
-console.log(scoreboard(inning, 4));
+console.log(scoreboard(inning, 9));
+
