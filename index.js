@@ -99,26 +99,70 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(inning, a){
-  var i = a;
-  var homeCount = 0;
-  var awayCount = 0;
-  var Home = `Home: ${homeCount}`;
-  var Away = `Away: ${awayCount}`;
-  for (let i = 0; i < a ; i++){
-    var count = Math.round(Math.random());  
-    if (count === 1){
-      homeCount = homeCount + 1;
-    return Home
-    }
-    else{
-      awayCount = awayCount + 1;
-    return Away
-    } 
+// function inning() {
+//   let score = Math.floor(3 * Math.random());
+//   return score;
+// }
+
+
+// const functionFeeder = function(callback, name) {
+//   callback(`Hello, ${name}, from the inside of functionFeeder`);
+// };
+
+function finalScore(callback, innings) {
+  let home = 0;
+  let away = 0;
+  for (let i = 0; i < innings ; i++){
+  home = callback() + home;
+  away = callback() + away;
   }
+  return `Home: ${home} Away: ${away}`
 }
 
-console.log(finalScore(inning, 7));
+
+console.log(finalScore(inning, 4));
+
+
+
+// function counterMaker() {
+//   let count = 0;
+//   return function counter() {
+//    return count++;
+//   }
+// }
+
+// const counter1 = counterMaker();
+
+// function finalScore(inning, a){
+//   var homeCount = 0;
+//   var awayCount = 0;
+//   var Home = `Home: ${homeCount}`;
+//   var Away = `Away: ${awayCount}`;
+//   for (let i = 0; i < a ; i++){
+//     var count = Math.round(Math.random());  
+//     if (count === 1){
+//       homeCount = homeCount + 1;
+//     return Home
+//     }
+//     else{
+//       awayCount = awayCount + 1;
+//     return Away
+//     } 
+//   }
+// }
+
+// console.log(finalScore(inning, 7));
+
+
+// function inning() {
+//   let score = Math.floor(3 * Math.random());
+//   return score;
+// }
+
+
+
+
+
 
 
 /* Task 4: 
