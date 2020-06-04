@@ -113,8 +113,8 @@ function finalScore(callback, innings) {
   let home = 0;
   let away = 0;
   for (let i = 0; i < innings ; i++){
-  home = callback() + home;
-  away = callback() + away;
+    home = callback() + home;
+    away = callback() + away;
   }
   return `Home: ${home} Away: ${away}`
 }
@@ -186,8 +186,16 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(callback, innings) {
+  let home = 0;
+  let away = 0;
+  for (let i = 0; i < innings ; i++){
+    home = callback() + home;
+    away = callback() + away;
+    var numInning = numInning + 1;
+    console.log(`${numInning}: ${home} - ${away}`)
+  }
+  console.log(`Final Score: ${home} - ${away}`);
 }
 
-
+console.log(scoreboard(inning, 4));
